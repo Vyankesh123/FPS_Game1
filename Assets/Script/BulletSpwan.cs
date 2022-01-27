@@ -18,7 +18,7 @@ public class BulletSpwan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("Fire1"))
         {
             bulletTempref = Instantiate(bulletPrefab);
             bulletTempref.transform.position = transform.position; 

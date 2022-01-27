@@ -9,6 +9,16 @@ public class FinalScript : MonoBehaviour
     public TMP_Text txt2;
     float fvalue;
 
+    public static FinalScript instance;
+
+    private void Awake()
+    {
+        if(instance==null)
+        {
+            instance = this;
+        }
+    }
+
     public void PlayAgain()
     {
         SceneManager.LoadScene(1);
@@ -16,6 +26,8 @@ public class FinalScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        txt2.text = "Score : " + PlayerPrefs.GetFloat("FinalS",0f).ToString();
         
     }
     //public void ScoreBoard()
@@ -29,6 +41,8 @@ public class FinalScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       // Scorer sd = FindObjectOfType<Scorer>();
+
+       
     }
 }
